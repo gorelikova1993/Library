@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Главная страница</title>
+    <!-- Webjars подключаются здесь, они будут доступны на всех страницах -->
+    <link th:href="@{/webjars/bootstrap/4.0.0/css/bootstrap.min.css}" rel="stylesheet" />
+</head>
+<body>
+<div class="container">
+    <h1>Библиотека</h1>
+
+    <!-- 2. Атрибут layout:fragment="content" - это место для вставки -->
+    <div layout:fragment="content">
+        <p>Здесь будет контент из других страниц...</p>
+    </div>
+</div>
+
+</body>
+</html>

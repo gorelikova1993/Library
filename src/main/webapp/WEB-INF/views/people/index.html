@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout}"> <!-- Путь без .html -->>
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+<th:block layout:fragment="content">
+
+    <p class="h2">Список пользователей</p>
+    <div th:each="person : ${people}">
+    <a th:href="@{/people/{id}(id=${person.getId()})}"
+       th:text="${person.getName() + ', ' + person.getBirthYear()}">user</a>
+    </div>
+
+    <a href="/people/new">Добавить человека</a>
+    <br/>
+    <hr/>
+
+</th:block>
+
+</body>
+</html>

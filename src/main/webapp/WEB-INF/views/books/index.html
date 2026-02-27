@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+<th:block  layout:fragment="content">
+
+  <div th:each="book : ${books}">
+    <a th:href="@{/books/{id}(id=${book.getId()})}"
+       th:text="${book.getName() + ', ' + book.getAuthor() + ', ' + book.getYear()}">book</a>
+  </div>
+  <br/>
+  <hr/>
+
+  <a href="/books/new">Добавить книгу</a>
+
+</th:block>
+</body>
+</html>
